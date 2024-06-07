@@ -11,28 +11,28 @@ const ViewAllAlbum = () => {
             <div className="container">
                 <div className="row">
                     <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                        <div className="container">
-                            <div className="row g-3">
-                                {
-                                    data.map(
-                                        (value, index) => {
-                                            return <div className="col col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-3">
-
-                                                <div class="card">
-                                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRizakS11CFgh7TMdu5nJKZTRSg2RUHJxxDoQ&s" class="card-img-top" alt="..."></img>
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">{value.userId}</h5>
-                                                        <p class="card-text">{value.id}</p>
-                                                        <p class="card-text">{value.title}</p>
-                                                        <a href="#" class="btn btn-primary">Add</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        }
-                                    )
-                                }
-                            </div>
-                        </div>
+                    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">userID</th>
+      <th scope="col">ID</th>
+      <th scope="col">Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    {
+        data.map(
+            (value,index)=>{
+                return <tr>
+                <td>{value.userId}</td>
+                <td>{value.id}</td>
+                <td>{value.title}</td>
+              </tr>
+            }
+        )
+    }
+  </tbody>
+</table>                        
                     </div>
                 </div>
             </div>
